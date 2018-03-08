@@ -9,18 +9,19 @@ Examples for RPP tool paper for TAP 2018
   Notice that some of these examples have incorrect specification (but are also supported by RPP).
 
 - In the stady-bechmark folder are located the subset of example from the stackoverflow benchmark what
-  contains unvalided properties. StaDy and E-ASCL can be run one these examples unsing the script 'script.sh'.
-  First argument is the *.c file, second argument is the relational property of interest (sepcified by
-  the corresponding wrapper function) and last argument specifiy if is run E-ASCL on generated test cases.
+  contains unvalided properties. StaDy and E-ASCL can be run on these examples unsing the script `script.sh`.
+  First argument is the `*.c` file, second argument is the relational property of interest (sepcified by
+  the corresponding wrapper function) and last argument specifiy if E-ASCL is run on generated test cases.
   Runing E-ASCL can take time since it will be run an all test genertated test cases for one property.
-  To avoud polution during E-ACSL execution, you can grep interesting information from the consol
-  Example of use in the stady-benchmark folder:
-  	  
+  Example of use in the stady-benchmark folder without E-ACSL:
+      
         sh script.sh Contact-flase.c relational_wrapper_2 0
-  	     
+   
+  Example of use in the stady-benchmark folder with E-ACSL:
+         
         sh script.sh Contact-flase.c relational_wrapper_2 1
    	    
-    To avoid pollution of the console during E-ACSL execution, you can grep interesting information:
+  To avoid pollution of the console during E-ACSL execution, you can grep interesting information:
   
         sh script.sh Contact-flase.c relational_wrapper_2 1 2>&1 | grep -B1 "failed"
   
